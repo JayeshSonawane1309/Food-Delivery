@@ -1,0 +1,133 @@
+/* ===============================
+   LIST CONTAINER
+================================ */
+.List {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: #f6f8fb;
+}
+
+/* Utility */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   TABLE WRAPPER
+================================ */
+.list-table {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===============================
+   TABLE ROW FORMAT
+================================ */
+.list-table-format {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+/* Hover Effect */
+.list-table-format:not(.title):hover {
+  background-color: #fff3ed;
+}
+
+/* ===============================
+   HEADER ROW
+================================ */
+.list-table-format.title {
+  background-color: #fafafa;
+  font-weight: 600;
+  font-size: 15px;
+  color: #444;
+  border-bottom: 2px solid #eee;
+}
+
+/* ===============================
+   IMAGE STYLING
+================================ */
+.list-table-format img {
+  width: 70px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* ===============================
+   ACTION BUTTON
+================================ */
+.list-table-format .action-btn {
+  color: #ff4c24;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.list-table-format .action-btn:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet */
+@media (min-width: 900px) {
+  .list-table-format img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+}
+
+@media (max-width: 900px) {
+  .List {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .List {
+    padding: 20px;
+  }
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 0.5fr;
+  }
+}
+/* ===============================
+   MOBILE RESPONSIVENESS
+================================ */
+
+@media (max-width: 600px) {
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 0.8fr 0.8fr 0.5fr;
+  }
+  .List {
+    padding: 10px;
+  }
+  /* Adjust image size */
+  .list-table-format img {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,108 @@
+/* ===============================
+   VERIFY CONTAINER
+================================ */
+
+.Verify {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff6f2, #ffe8e2);
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===============================
+   LOADER WRAPPER
+================================ */
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===============================
+   SPINNER
+================================ */
+
+.Verify .spinner {
+  width: 90px;
+  height: 90px;
+  border: 6px solid rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #ff4c24;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.loader-wrapper p {
+  font-size: 18px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .Verify .spinner {
+    width: 80px;
+    height: 80px;
+    border-width: 5px;
+  }
+
+  .loader-wrapper p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .Verify {
+    padding: 15px;
+  }
+
+  .Verify .spinner {
+    width: 70px;
+    height: 70px;
+    border-width: 5px;
+  }
+
+  .loader-wrapper p {
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .Verify {
+    min-height: 200px;
+  }
+  .Verify .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+  }
+
+  .loader-wrapper p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,155 @@
+.MyOrders {
+  padding: 50px 10%;
+  background-color: #f5f6f8;
+  min-height: 100vh;
+}
+
+.MyOrders h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1c1c1c;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ========================= */
+/* Order Card */
+/* ========================= */
+
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 70px 2fr 1fr 1fr 1fr 140px;
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px;
+  background: #ffffff;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #ff5200;
+
+  transition: all 0.3s ease;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.my-orders-order img {
+  width: 55px;
+}
+
+/* Text Styling */
+.my-orders-order p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.my-orders-order b {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Price Styling */
+.my-orders-order p:nth-child(3) {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+/* Status Dot */
+.my-orders-order span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* ========================= */
+/* Status Colors */
+/* ========================= */
+
+.status-processing {
+  color: #ff9800;
+}
+
+.status-delivered {
+  color: #2e7d32;
+}
+
+.status-cancelled {
+  color: #d32f2f;
+}
+
+/* ========================= */
+/* Track Button */
+/* ========================= */
+
+.my-orders-order button {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid #ff5200;
+  background: transparent;
+  color: #ff5200;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-orders-order button:hover {
+  background: #ff5200;
+  color: white;
+}
+
+/* ========================= */
+/* Tablet Responsive */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .MyOrders {
+    padding: 40px 6%;
+  }
+
+  .my-orders-order {
+    grid-template-columns: 60px 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+  }
+
+  .my-orders-order button {
+    grid-column: span 2;
+  }
+}
+
+/* ========================= */
+/* Mobile Responsive */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .MyOrders {
+    padding: 25px 5%;
+  }
+
+  .my-orders-order {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .my-orders-order img {
+    width: 45px;
+  }
+
+  .my-orders-order button {
+    width: 100%;
+    text-align: center;
+  }
+}

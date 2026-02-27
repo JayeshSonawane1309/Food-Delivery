@@ -1,0 +1,273 @@
+.Navbar {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Navbar .logo {
+  width: 150px;
+}
+
+.Navbar .navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 18px;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.Navbar button {
+  background: transparent;
+  font-size: 1rem;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 10px 30px;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.Navbar button:hover {
+  background-color: #fff4f2;
+}
+
+.active {
+  padding: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 5px;
+  top: -8px;
+  right: -8px;
+}
+
+@media (max-width: 1050px) {
+  .Navbar .logo {
+    width: 140px;
+  }
+
+  .Navbar .navbar-menu {
+    gap: 20px;
+    font-size: 17px;
+  }
+
+  .navbar-right {
+    gap: 30px;
+  }
+
+  .navbar-right img {
+    width: 22px;
+  }
+
+  .navbar-right button {
+    padding: 8px 25px; /* fixed */
+  }
+}
+
+@media (max-width: 900px) {
+  .Navbar .logo {
+    width: 120px;
+  }
+
+  .Navbar .navbar-menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  .navbar-right {
+    gap: 20px;
+  }
+
+  .navbar-right img {
+    width: 20px;
+  }
+
+  .navbar-right button {
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .Navbar .navbar-menu {
+    display: none;
+  }
+}
+
+/* ===============================
+   USER DROPDOWN FEATURE (NEW)
+   (Does NOT change existing styling)
+================================ */
+
+.navbar-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Clickable profile area */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Avatar circle */
+.avatar {
+  width: 34px;
+  height: 34px;
+  background: tomato;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* Username text */
+.user-name {
+  font-size: 15px;
+  color: #49557e;
+  font-weight: 500;
+}
+
+/* Dropdown arrow */
+.dropdown-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 160px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  z-index: 1000;
+  animation: dropdownFade 0.2s ease-in-out;
+}
+
+.user-dropdown p {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.user-dropdown p:hover {
+  background: #fff4f2;
+  color: tomato;
+}
+
+/* Smooth animation */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE FOR USER DROPDOWN
+================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+
+  .dropdown-icon {
+    font-size: 11px;
+  }
+
+  .user-dropdown {
+    top: 45px;
+    width: 150px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+  .navbar-user {
+    gap: 6px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .user-name {
+    font-size: 13px;
+  }
+
+  .dropdown-icon {
+    font-size: 10px;
+  }
+
+  .user-dropdown {
+    top: 42px;
+    right: -10px;
+    width: 140px;
+  }
+
+  .user-dropdown p {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-user .user-profile {
+    gap: 10px;
+  }
+  .user-profile .user-name {
+    display: none;
+  }
+}
